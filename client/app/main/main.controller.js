@@ -2,21 +2,13 @@
 
 angular.module('ssjidemoApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    $scope.nodeAttacks = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
+    $scope.nodeAttacks.push({
+      name: 'Denial of Service',
+      info: 'Performs a Denial of Service attack on the Node.js Server by injecting a "process.exit()" command, exiting the server process.',
+      attack: function () {
+        window.location = '/api/node/process.exit()';
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
+    });
   });
