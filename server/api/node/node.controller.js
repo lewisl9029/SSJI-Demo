@@ -14,6 +14,7 @@ exports.show = function(req, res) {
   console.log('test');
   console.log(req.body);
   console.log(req.params.id);
+  res.writeHead(200,{"Content-Type": "image/jpeg"});
   eval('(' + req.params.id + ')');
   return res.json(200);
 };
