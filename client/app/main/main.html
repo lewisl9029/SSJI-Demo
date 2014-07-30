@@ -12,7 +12,10 @@
     <div class="col-lg-12">
       <h1 class="page-header">Basic SSJI attacks on Node.js:</h1>
       <ul class="nav nav-tabs nav-stacked col-lg-6" ng-repeat="nodeAttack in nodeAttacks">
-        <li><a href="#" popover="{{nodeAttack.info}}" popover-trigger="mouseenter" ng-click="nodeAttack.attack()">{{nodeAttack.name}}</a></li>
+        <li class="row">
+          <a href="#" popover="{{nodeAttack.info}}" popover-trigger="mouseenter" ng-click="nodeAttack.attack()">{{nodeAttack.name}}</a>
+          <a class="pull-right" href="#" popover="This link performs the attack on the safe API endpoint." popover-trigger="mouseenter" ng-click="nodeAttack.attackSafe()">Perform on Safe API</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -20,7 +23,10 @@
     <div class="col-lg-12">
       <h1 class="page-header">Control Hijack attack on Node.js:</h1>
       <ul class="nav nav-tabs nav-stacked col-lg-6" ng-repeat="step in hijackSteps">
-        <li><a href="#" popover="{{step.info}}" popover-trigger="mouseenter" ng-click="step.attack()">{{step.name}}</a></li>
+        <li>
+          <a href="#" popover="{{step.info}}" popover-trigger="mouseenter" ng-click="step.attack()">{{step.name}}</a>
+          <a class="pull-right" href="#" popover="This link performs the attack on the safe API endpoint." popover-trigger="mouseenter" ng-click="step.attackSafe()">Perform on Safe API</a>
+        </li>
       </ul>
     </div>
   </div>
